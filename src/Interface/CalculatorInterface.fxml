@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CalculatorController">
+   <children>
+      <VBox prefHeight="110.0" prefWidth="580.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="32.0">
+         <children>
+            <AnchorPane prefHeight="30.0" prefWidth="580.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label fx:id="labelID" alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="580.0" style="-fx-border-color: #bfbfbf;" textAlignment="RIGHT" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <HBox prefHeight="35.0" prefWidth="580.0" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <children>
+                  <AnchorPane prefHeight="35.0" prefWidth="280.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox prefHeight="35.0" prefWidth="280.0" style="-fx-border-color: #bfbfbf;" AnchorPane.leftAnchor="0.0">
+                           <children>
+                              <RadioButton fx:id="radioButtonHexID" mnemonicParsing="false" prefHeight="35.0" prefWidth="60.0" text="Hex">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="RadioButtonDecID" mnemonicParsing="false" prefHeight="35.0" prefWidth="60.0" text="Dec">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="radioButtonOctID" mnemonicParsing="false" prefHeight="35.0" prefWidth="60.0" text="Oct">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="radioButtonBinID" mnemonicParsing="false" prefHeight="35.0" prefWidth="60.0" text="Bin">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="35.0" prefWidth="280.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox prefHeight="35.0" prefWidth="280.0" style="-fx-border-color: #bfbfbf;" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <RadioButton fx:id="RadioButtonStopnieID" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Stopnie">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="radioButtonRadianyID" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Radiany">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="radioButtonGradusyID" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Gradusy">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox prefHeight="35.0" prefWidth="580.0" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <children>
+                  <AnchorPane prefHeight="35.0" prefWidth="280.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox prefHeight="35.0" prefWidth="170.0" style="-fx-border-color: #bfbfbf;" AnchorPane.leftAnchor="0.0">
+                           <children>
+                                <CheckBox fx:id="checkBoxInvID" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" text="Inv">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="checkBoxHypID" mnemonicParsing="false" prefHeight="33.0" prefWidth="75.0" text="Hyp">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="35.0" prefWidth="35.0" style="-fx-border-color: #bfbfbf;" AnchorPane.leftAnchor="190.0" />
+                        <HBox prefHeight="35.0" prefWidth="35.0" style="-fx-border-color: #bfbfbf;" AnchorPane.leftAnchor="245.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="35.0" prefWidth="260.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox prefHeight="35.0" prefWidth="228.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Button fx:id="buttonBackspaceID" mnemonicParsing="false" onMouseClicked="#BackspaceClickMethod" prefHeight="35.0" prefWidth="75.0" text="Backspace" textFill="RED">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="buttonCEID" mnemonicParsing="false" onMouseClicked="#CEClickMethod" prefHeight="35.0" prefWidth="75.0" text="CE" textFill="RED">
+                                 <HBox.margin>
+                                    <Insets left="3.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="buttonC2ID" mnemonicParsing="false" onMouseClicked="#C2ClickMethod" prefHeight="35.0" prefWidth="75.0" text="C" textFill="RED">
+                                 <HBox.margin>
+                                    <Insets left="3.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="70.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="240.0" prefWidth="580.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <HBox prefHeight="240.0" prefWidth="580.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <AnchorPane prefHeight="240.0" prefWidth="45.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox prefHeight="240.0" prefWidth="45.0" AnchorPane.leftAnchor="0.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="45.0">
+                                 <children>
+                                    <Button fx:id="buttonSpaID" mnemonicParsing="false" onMouseClicked="#spaClickMethod" prefHeight="42.0" prefWidth="45.0" text="Spa" textFill="#0a2ddd">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                        </Button>
+                                    <Button fx:id="buttonAveID" mnemonicParsing="false" onMouseClicked="#aveClickMethod" prefHeight="42.0" prefWidth="45.0" text="Ave">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonSumID" mnemonicParsing="false" onMouseClicked="#sumClickMethod" prefHeight="42.0" prefWidth="45.0" text="Sum">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonSID" mnemonicParsing="false" onMouseClicked="#SClickMethod" prefHeight="42.0" prefWidth="45.0" text="\$">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonDatID" mnemonicParsing="false" onMouseClicked="#datClickMethod" prefHeight="42.0" prefWidth="45.0" text="Dat">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="240.0" prefWidth="140.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox prefHeight="240.0" prefWidth="145.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="45.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <children>
+                                    <Button fx:id="buttonFEID" mnemonicParsing="false" onMouseClicked="#FEClickMethod" prefHeight="42.0" prefWidth="45.0" text="F-E" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttondmsID" mnemonicParsing="false" onMouseClicked="#dmsClickMethod" prefHeight="42.0" prefWidth="45.0" text="dms" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonsinID" mnemonicParsing="false" onMouseClicked="#sinClickMethod" prefHeight="42.0" prefWidth="45.0" text="sin" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttoncosID" mnemonicParsing="false" onMouseClicked="#cosClickMethod" prefHeight="42.0" prefWidth="45.0" text="cos" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttontanID" mnemonicParsing="false" onMouseClicked="#tanClickMethod" prefHeight="42.0" prefWidth="45.0" text="tan" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="45.0">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Button fx:id="buttonPID" mnemonicParsing="false" onMouseClicked="#PClickMethod" prefHeight="42.0" prefWidth="45.0" text="(" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonExpID" mnemonicParsing="false" onMouseClicked="#expClickMethod" prefHeight="42.0" prefWidth="45.0" text="Exp" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonxyID" mnemonicParsing="false" onMouseClicked="#xyClickMethod" prefHeight="42.0" prefWidth="45.0" text="x^y" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonx3ID" mnemonicParsing="false" onMouseClicked="#x3ClickMethod" prefHeight="42.0" prefWidth="45.0" text="x^3" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonx2ID" mnemonicParsing="false" onMouseClicked="#x2ClickMethod" prefHeight="42.0" prefWidth="45.0" text="x^2" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="45.0">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Button fx:id="buttonJID" mnemonicParsing="false" onMouseClicked="#JClickMethod" prefHeight="42.0" prefWidth="45.0" text=")" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonlnID" mnemonicParsing="false" onMouseClicked="#lnClickMethod" prefHeight="42.0" prefWidth="45.0" text="ln" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonlogID" mnemonicParsing="false" onMouseClicked="#logClickMethod" prefHeight="42.0" prefWidth="45.0" text="log" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonnID" mnemonicParsing="false" onMouseClicked="#nClickMethod" prefHeight="42.0" prefWidth="45.0" text="n!" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="button1xID" mnemonicParsing="false" onMouseClicked="#x1ClickMethod" prefHeight="42.0" prefWidth="45.0" text="1/x" textFill="#f200c9">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="240.0" prefWidth="45.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox prefHeight="240.0" prefWidth="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="50.0">
+                                 <children>
+                                    <Button fx:id="buttonMCID" mnemonicParsing="false" onMouseClicked="#MCClickMethod" prefHeight="42.0" prefWidth="45.0" text="MC" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonMRID" mnemonicParsing="false" onMouseClicked="#MRClickMethod" prefHeight="42.0" prefWidth="45.0" text="MR" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonMSID" mnemonicParsing="false" onMouseClicked="#MSClickMethod" prefHeight="42.0" prefWidth="45.0" text="MS" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonMplusID" mnemonicParsing="false" onMouseClicked="#MplusClickMethod" prefHeight="42.0" prefWidth="45.0" text="M+" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonpiID" mnemonicParsing="false" onMouseClicked="#piClickMethod" prefHeight="42.0" prefWidth="45.0" text="pi" textFill="#0039f5">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="240.0" prefWidth="290.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox prefHeight="240.0" prefWidth="300.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="45.0">
+                                 <HBox.margin>
+                                    <Insets left="8.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Button fx:id="buttonsevenID" mnemonicParsing="false" onMouseClicked="#sevenClickMethod" prefHeight="42.0" prefWidth="45.0" text="7" textFill="#0015ff">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonfourID" mnemonicParsing="false" onMouseClicked="#fourClickMethod" prefHeight="42.0" prefWidth="45.0" text="4" textFill="#0015ff">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttononeID" mnemonicParsing="false" onMouseClicked="#oneClickMethod" prefHeight="42.0" prefWidth="45.0" text="1" textFill="#0015ff">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonzeroID" mnemonicParsing="false" onMouseClicked="#zeroClickMethod" prefHeight="42.0" prefWidth="45.0" text="0" textFill="#0015ff">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonAID" mnemonicParsing="false" onMouseClicked="#AClickMethod" prefHeight="42.0" prefWidth="45.0" text="A">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="45.0">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Button fx:id="buttoneightID" mnemonicParsing="false" onMouseClicked="#eightClickMethod" prefHeight="42.0" prefWidth="45.0" text="8" textFill="#0015ff">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonfiveID" mnemonicParsing="false" onMouseClicked="#fiveClickMethod" prefHeight="42.0" prefWidth="45.0" text="5" textFill="#0015ff">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttontwoID" mnemonicParsing="false" onMouseClicked="#twoClickMethod" prefHeight="42.0" prefWidth="45.0" text="2" textFill="#0015ff">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonplusminusID" mnemonicParsing="false" onMouseClicked="#plusminusClickMethod" prefHeight="42.0" prefWidth="45.0" text="+/-" textFill="#0015ff">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonBID" mnemonicParsing="false" onMouseClicked="#ClickMethod" prefHeight="42.0" prefWidth="45.0" text="B">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="45.0">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Button fx:id="buttonnineID" mnemonicParsing="false" onMouseClicked="#nineClickMethod" prefHeight="42.0" prefWidth="45.0" text="9" textFill="#0015ff">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonsixID" mnemonicParsing="false" onMouseClicked="#sixClickMethod" prefHeight="42.0" prefWidth="45.0" text="6" textFill="#0015ff">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonthreeID" mnemonicParsing="false" onMouseClicked="#threeClickMethod" prefHeight="42.0" prefWidth="45.0" text="3" textFill="#0015ff">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonpointID" mnemonicParsing="false" onMouseClicked="#pointClickMethod" prefHeight="42.0" prefWidth="45.0" text="," textFill="#0015ff">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonCID" mnemonicParsing="false" onMouseClicked="#CClickMethod" prefHeight="42.0" prefWidth="45.0" text="C">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="45.0">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Button fx:id="buttondivisionID" mnemonicParsing="false" onMouseClicked="#divisionClickMethod" prefHeight="42.0" prefWidth="45.0" text="/" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonmultiID" mnemonicParsing="false" onMouseClicked="#multiClickMethod" prefHeight="42.0" prefWidth="45.0" text="*" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonminusID" mnemonicParsing="false" onMouseClicked="#minusClickMethod" prefHeight="42.0" prefWidth="45.0" text="-" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonplusID" mnemonicParsing="false" onMouseClicked="#plusClickMethod" prefHeight="42.0" prefWidth="45.0" text="+" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonDID" mnemonicParsing="false" onMouseClicked="#DClickMethod" prefHeight="42.0" prefWidth="45.0" text="D">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="45.0">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Button fx:id="buttonMODID" mnemonicParsing="false" onMouseClicked="#MODClickMethod" prefHeight="42.0" prefWidth="45.0" text="MOD" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonOrID" mnemonicParsing="false" onMouseClicked="#OrClickMethod" prefHeight="42.0" prefWidth="45.0" text="Or" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonLshID" mnemonicParsing="false" onMouseClicked="#LshClickMethod" prefHeight="42.0" prefWidth="45.0" text="Lsh" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonequalID" mnemonicParsing="false" onMouseClicked="#equalClickMethod" prefHeight="42.0" prefWidth="45.0" text="=" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonEID" mnemonicParsing="false" onMouseClicked="#EClickMethod" prefHeight="42.0" prefWidth="45.0" text="E">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="45.0">
+                                 <children>
+                                    <Button fx:id="buttonAndID" mnemonicParsing="false" onMouseClicked="#AndClickMethod" prefHeight="42.0" prefWidth="45.0" text="And" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonXorID" mnemonicParsing="false" onMouseClicked="#XorClickMethod" prefHeight="42.0" prefWidth="45.0" text="Xor" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonNotID" mnemonicParsing="false" onMouseClicked="#NotClickMethod" prefHeight="42.0" prefWidth="45.0" text="Not" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonIntID" mnemonicParsing="false" onMouseClicked="#IntClickMethod" prefHeight="42.0" prefWidth="45.0" text="Int" textFill="RED">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="buttonFID" mnemonicParsing="false" onMouseClicked="#FClickMethod" prefHeight="42.0" prefWidth="45.0" text="F">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <MenuBar layoutY="-1.0" prefHeight="20.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Edycja">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Zapisz" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Widok">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Dodaj" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Pomoc">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
